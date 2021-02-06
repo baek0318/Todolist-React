@@ -1,0 +1,64 @@
+.wrap {
+  position: fixed;
+  left: 120px;
+  right: 120px;
+  top: 120px;
+  bottom: 120px;
+  background-color:rgba(247, 247, 247, 0.8);
+  border-radius: 20px;
+  display: flex;
+}
+
+.main {
+
+}
+
+.sideBar {
+  background-color: #F2F2F2;
+  border-radius: 20px 0 0 20px;
+  width: 230px;
+}
+
+.sideBar ul {
+  margin: 0%;
+  padding-left: 20px;
+  list-style: none;
+  color: #404040;
+  width: 100%;
+}
+
+.sideBar ul a {
+  text-decoration-line: none;
+}
+
+.sideBar ul li {
+  color: #404040;
+  list-style: none;
+}
+
+.sideBar ul li .userProfile{
+  border-bottom: 1px solid #404040;
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.sideBar ul li .userProfile h2{
+  margin: 0;
+}
+
+.sideBar ul li .userProfile button{
+  background-color: #F2F2F2;
+  color: #8AC1E8;
+  padding: 0px;
+  width: 80px;
+  height: 20px;
+}
+
+
+.slideButton {
+  text-align: end;
+}
+
+.plusButton {
+
+}
