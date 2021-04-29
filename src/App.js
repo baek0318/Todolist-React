@@ -12,18 +12,16 @@ function App() {
   const logout = (value) => setAuthenticated(value);
 
   return (
-    <BrowserRouter>
-      <div className={`${style.App}`}>
-        <Switch>
-          <Route path="/login" render={props => (
-              <SignIn authenticated={authenticated} login={login} {...props} />
-            )}
-          />
-          <Route path="/signup" component={SignUp}/>
-          <Route path="/main" component={MainView}/>
-        </Switch>
-      </div>
-    </BrowserRouter>
+    <div className={`${style.App}`}>
+      <Switch>
+        <Route path="/login" render={props => (
+            <SignIn authenticated={authenticated} login={login} {...props} />
+          )}
+        />
+        <Route path="/signup" component={SignUp}/>
+        <Route path="/main" component={MainView}/>
+      </Switch>
+    </div>
   );
 }
 
