@@ -1,26 +1,15 @@
 import React, {useState,} from 'react'
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import {AuthRoute, SignIn, SignUp} from './components/auth'
-import {MainView} from './components/todo'
-import style from './App.module.css'
+import { Route } from 'react-router'
+import {Home, Signup} from './components'
 
-function App() {
-  
-  const [authenticated, setAuthenticated] = useState(false);
-  
-  const login = (value) => setAuthenticated(value);
-  const logout = (value) => setAuthenticated(value);
+const App = () => {
+
+  const [auth, setAuth] = useState(false);
 
   return (
-    <div className={`${style.App}`}>
-      <Switch>
-        <Route path="/login" render={props => (
-            <SignIn authenticated={authenticated} login={login} {...props} />
-          )}
-        />
-        <Route path="/signup" component={SignUp}/>
-        <Route path="/main" component={MainView}/>
-      </Switch>
+    <div>
+      <Route exact path="/" component={Home}/>
+      <Route path="/signup" render={() => <Signup signup={setAuth}/>}/>
     </div>
   );
 }
