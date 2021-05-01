@@ -1,1 +1,1 @@
-export {default as postUserInfo} from './signup';
+export {default as postUserInfo} from './postUserInfo';

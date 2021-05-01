@@ -19,8 +19,9 @@ const Signup = ({setAuth}) => {
     setUsername(e.target.value);
   }
   
-  const signup = (e) => {
-    postUserInfo
+  const signup = async (e) => {
+    let userInfo = await postUserInfo(email, password, username);
+    
   }
 
   return (
