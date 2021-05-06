@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {postUserInfo} from '../api/auth';
 
-const Signup = ({setAuth}) => {
+const Signup = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,8 +20,17 @@ const Signup = ({setAuth}) => {
   }
   
   const signup = async (e) => {
-    let userInfo = await postUserInfo(email, password, username);
-    
+    let userId = await postUserInfo({
+      email : email,
+      name : username,
+      password : password
+    });
+    if(userId.id >= 1) {
+      alert("회원가입 완료");
+    }
+    else {
+      alert("회원가입 실패");
+    }
   }
 
   return (
