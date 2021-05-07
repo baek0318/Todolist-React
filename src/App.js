@@ -1,6 +1,6 @@
 import React, {useState,} from 'react'
 import { Route } from 'react-router'
-import {Home, Signup} from './components'
+import {Home, Signup, Login} from './components'
 
 const App = () => {
 
@@ -10,6 +10,7 @@ const App = () => {
     <div>
       <Route exact path="/" component={Home}/>
       <Route path="/signup" component={Signup}/>
+      <Route path="/login" component={Login}/>
     </div>
   );
 }
