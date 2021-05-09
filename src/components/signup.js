@@ -1,7 +1,8 @@
 import {useState} from 'react';
 import {postUserInfo} from '../api/auth';
+import { Redirect } from 'react-router-dom';
 
-const Signup = () => {
+const Signup = ({setUserId, userId}) => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,21 +21,30 @@ const Signup = () => {
   }
   
   const signup = async (e) => {
-    let userId = await postUserInfo({
+    let result = await postUserInfo({
       email : email,
       name : username,
       password : password
     });
-    if(userId.id >= 1) {
+    if(result.id >= 1) {
       alert("회원가입 완료");
+      setUserId(result);
     }
     else {
       alert("회원가입 실패");
     }
   }
+  
+  if(userId.id > 0) {
+    const {from} = {from : {pathname: "/login"}};
+    return <Redirect to={from}/>
+  }
 
   return (
     <div>
+      <div>
+        <h1>회원가입</h1>
+      </div>
       <div>
         <div>Email</div>
         <input type='email' placeholder='이메일을 입력해주세요' onChange={emailHandler}/>
