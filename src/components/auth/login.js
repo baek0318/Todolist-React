@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {postLogin} from '../api/auth';
+import {postLogin} from '../../api/auth';
 
 const Login = (setAuth) => {
   

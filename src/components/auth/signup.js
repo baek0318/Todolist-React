@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {postUserInfo} from '../api/auth';
+import {postUserInfo} from '../../api/auth';
 import { Redirect } from 'react-router-dom';
 
 const Signup = ({setUserId, userId}) => {
