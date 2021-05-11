@@ -2,9 +2,7 @@ import {useState} from 'react';
 import { Link, Route } from "react-router-dom"
 import { TodoCreate } from ".";
 
-const TodoList = () => {
-
-  const [todo, setTodo] = useState(null);
+const TodoList = ({todo}) => {
 
   return (
     <div>

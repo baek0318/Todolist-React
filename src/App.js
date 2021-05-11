@@ -7,6 +7,7 @@ const App = () => {
 
   const [auth, setAuth] = useState(false);
   const [userId, setUserId] = useState(0);
+  const [todo, setTodo] = useState(null);
 
   return (
     <div>
@@ -14,8 +15,8 @@ const App = () => {
       <Route path="/signup" render={() => <Signup setUserId={setUserId} userId={userId}/>}/>
       <Route path="/login" render={() => <Login setAuth={setAuth}/>}/>
       <Switch>
-        <Route path='/todolist/todocreate' component={TodoCreate} />
-        <Route path="/todolist" component={TodoList} />
+        <Route path='/todolist/todocreate'render={() => <TodoCreate setTodo={setTodo} userId={userId}/>}/>
+        <Route path='/todolist'render={() => <TodoList todo={todo}/>}/>
       </Switch>
     </div>
   );
